@@ -20,3 +20,5 @@
    - **Task:** Convert first and second names to lowercase; produce a username as `<first initial><second name>`.
 
 ## Dictionaries
+7. **TRY - Counting vowels**
+   - **Task:** Create a short program prompting for your full name; with the help of a dictionay, store and count the occurences of each vowel in the string.
