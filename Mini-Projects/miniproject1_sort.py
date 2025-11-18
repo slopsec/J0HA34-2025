@@ -3,7 +3,9 @@
 
 # display a list of tokens
 def display_tokens(token_array):
-    pass
+    for token in token_array:
+        print(token, end=" ")
+    print()
 
 # len sort
 # receive an array of tokens
@@ -29,7 +31,7 @@ def sort_alphabet(token_array):
         
         if sorted: break
 
-    # Todo Display
+    display_tokens(token_array)
     
 
 # Tokenising function
@@ -59,6 +61,7 @@ def main():
 
     main_text = input_validate()
     token_list = tokenise(main_text)
+    sort_alphabet(token_list)
 
     # Just for testing
     print(token_list)
