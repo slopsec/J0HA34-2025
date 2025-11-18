@@ -13,7 +13,24 @@ def len_sort(token_array):
 # Alphabetical sort
 # receive an array of tokens
 def sort_alphabet(token_array):
-    pass
+    # Implementing a bubble sort
+    # No adaptation needed for type
+    length = len(token_array)
+
+    # Outer loop
+    for i in range(length - 1):
+        sorted = True
+        # Inner loop -> doing the swaps
+        for j in range(length - 1 - i):
+            # If necessary, swap and flag as unsorted
+            if token_array[j] > token_array[j+1]:
+                token_array[j], token_array[j+1] = token_array[j+1], token_array[j]
+                sorted = False
+        
+        if sorted: break
+
+    # Todo Display
+    
 
 # Tokenising function
 # receives a string
