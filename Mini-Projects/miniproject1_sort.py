@@ -23,7 +23,13 @@ def tokenise(content):
 
 # Input and validate (returns string)
 def input_validate():
-    pass
+    # Input text and validate: string must not be empty or digits
+    text = input("Please type in some text (several words)")
+    while text=="" or text.isnumeric():
+        print("Invalid entry")
+        text = input("Please type in some text (several words)")
+    
+    return text
 
 def main():
     pass
