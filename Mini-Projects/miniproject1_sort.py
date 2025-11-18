@@ -32,7 +32,8 @@ def input_validate():
     return text
 
 def main():
-    pass
+    # Test code
+    main_text = input_validate()
 
 # Module guard code
 if __name__ == "__main__":
