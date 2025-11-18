@@ -3,7 +3,9 @@
 
 # display a list of tokens
 def display_tokens(token_array):
-    pass
+    for token in token_array:
+        print(token, end=" ")
+    print()
 
 # len sort
 # receive an array of tokens
@@ -13,7 +15,24 @@ def len_sort(token_array):
 # Alphabetical sort
 # receive an array of tokens
 def sort_alphabet(token_array):
-    pass
+    # Implementing a bubble sort
+    # No adaptation needed for type
+    length = len(token_array)
+
+    # Outer loop
+    for i in range(length - 1):
+        sorted = True
+        # Inner loop -> doing the swaps
+        for j in range(length - 1 - i):
+            # If necessary, swap and flag as unsorted
+            if token_array[j] > token_array[j+1]:
+                token_array[j], token_array[j+1] = token_array[j+1], token_array[j]
+                sorted = False
+        
+        if sorted: break
+
+    display_tokens(token_array)
+    
 
 # Tokenising function
 # receives a string
@@ -42,6 +61,7 @@ def main():
 
     main_text = input_validate()
     token_list = tokenise(main_text)
+    sort_alphabet(token_list)
 
     # Just for testing
     print(token_list)
