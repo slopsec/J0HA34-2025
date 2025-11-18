@@ -19,7 +19,15 @@ def sort_alphabet(token_array):
 # receives a string
 # returns an array of substrings
 def tokenise(content):
-    pass
+    # Turn to lower case and tokenize
+    content = content.lower()
+    tokens = content.split()
+    # Clean up
+    for index in range(len(tokens)):
+        temp = tokens[index]
+        tokens[index] = temp.strip(" \n\t;:,.")
+    return tokens
+
 
 # Input and validate (returns string)
 def input_validate():
