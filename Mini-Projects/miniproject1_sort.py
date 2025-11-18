@@ -19,14 +19,33 @@ def sort_alphabet(token_array):
 # receives a string
 # returns an array of substrings
 def tokenise(content):
-    pass
+    # Turn to lower case and tokenize
+    content = content.lower()
+    tokens = content.split()
+    # Clean up
+    for index in range(len(tokens)):
+        temp = tokens[index]
+        tokens[index] = temp.strip(" \n\t;:,.!")
+    return tokens
 
 # Input and validate (returns string)
 def input_validate():
-    pass
+    # Input text and validate: string must not be empty or digits
+    text = input("Please type in some text (several words)")
+    while text=="" or text.isnumeric():
+        print("Invalid entry")
+        text = input("Please type in some text (several words)")
+    
+    return text
 
 def main():
-    pass
+
+    main_text = input_validate()
+    token_list = tokenise(main_text)
+
+    # Just for testing
+    print(token_list)
+
 
 # Module guard code
 if __name__ == "__main__":
