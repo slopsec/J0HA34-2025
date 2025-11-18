@@ -25,9 +25,8 @@ def tokenise(content):
     # Clean up
     for index in range(len(tokens)):
         temp = tokens[index]
-        tokens[index] = temp.strip(" \n\t;:,.")
+        tokens[index] = temp.strip(" \n\t;:,.!")
     return tokens
-
 
 # Input and validate (returns string)
 def input_validate():
@@ -40,8 +39,13 @@ def input_validate():
     return text
 
 def main():
-    # Test code
+
     main_text = input_validate()
+    token_list = tokenise(main_text)
+
+    # Just for testing
+    print(token_list)
+
 
 # Module guard code
 if __name__ == "__main__":
