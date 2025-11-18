@@ -54,7 +54,6 @@ def input_validate():
     while text=="" or text.isnumeric():
         print("Invalid entry")
         text = input("Please type in some text (several words)")
-    
     return text
 
 def main():
@@ -63,9 +62,8 @@ def main():
     token_list = tokenise(main_text)
     sort_alphabet(token_list)
 
-    # Just for testing
-    print(token_list)
-
+    # # Just for testing
+    # print(token_list)
 
 # Module guard code
 if __name__ == "__main__":
