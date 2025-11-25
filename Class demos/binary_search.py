@@ -1,5 +1,4 @@
-test_data = 
-words = [
+test_data = [
     "able", "about", "above", "accept", "account", "across", "act", "add", "after", "again",
     "against", "age", "air", "all", "allow", "almost", "alone", "along", "already", "also",
     "always", "am", "among", "amount", "and", "animal", "another", "answer", "any", "appear",
@@ -64,4 +63,11 @@ def binary_search(array, key):
     print(runs, "runs") # testing only
     return -1
 
+def main():
+    print(binary_search(test_data, "air"))
+    print(binary_search(test_data, "class"))
+    print(binary_search(test_data, "from"))
+    print(binary_search(test_data, "zebra"))
 
+if __name__ == "__main__":
+    main()
