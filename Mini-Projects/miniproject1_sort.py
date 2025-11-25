@@ -10,7 +10,30 @@ def display_tokens(token_array):
 # len sort
 # receive an array of tokens
 def len_sort(token_array):
-    pass
+
+    # # Pro: Optimised - for list size
+    # # Con: Algorithm unknown
+    # token_array = sorted(token_array, key=len)
+
+    # display_tokens(token_array)
+
+    # Implementing a bubble sort
+    # No adaptation needed for type
+    length = len(token_array)
+
+    # Outer loop
+    for i in range(length - 1):
+        sorted = True
+        # Inner loop -> doing the swaps
+        for j in range(length - 1 - i):
+            # If necessary, swap and flag as unsorted
+            if len(token_array[j]) > len(token_array[j+1]):
+                token_array[j], token_array[j+1] = token_array[j+1], token_array[j]
+                sorted = False
+        
+        if sorted: break
+
+    display_tokens(token_array)
 
 # Alphabetical sort
 # receive an array of tokens
@@ -54,7 +77,6 @@ def input_validate():
     while text=="" or text.isnumeric():
         print("Invalid entry")
         text = input("Please type in some text (several words)")
-    
     return text
 
 def main():
@@ -63,9 +85,10 @@ def main():
     token_list = tokenise(main_text)
     sort_alphabet(token_list)
 
-    # Just for testing
-    print(token_list)
+    len_sort(token_list)
 
+    # # Just for testing
+    # print(token_list)
 
 # Module guard code
 if __name__ == "__main__":
