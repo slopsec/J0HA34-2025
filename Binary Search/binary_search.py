@@ -24,50 +24,61 @@ test_data = [
     "foot", "for", "force", "form", "forward", "four", "free", "friend", "from", "front"
 ]
 
-
-
 # air
 # class
 # from
+# zebra
 
-
-
-def binary_search(array, key):
+# The list needs to be sorted!
+def binary_search(list_ref, search_term):
     # Testing only
     runs = 0
 
-    # Search space boundaries (left and right)
-    left = 0
-    right = len(array) - 1
+    # Track the start point and end point
+    start = 0
+    end = len(list_ref) - 1
 
-    # The process repeats for as long as there is something
-    # Between left and right
-    # In this case it means left <= right
-    while left <= right:
-        runs +=1 # testing only
-        # Select a middle point
-        mid = (left + right) // 2
+    while start <= end:
+        # Testing
+        runs+=1
 
-        # 3 possibilites
-        # Matching: return the index
-        if array[mid] == key:
-            print(runs, "runs") # testing only
-            return mid
+        # Mid point (start + end) / 2 truncated
+        midpoint = (start + end) // 2
+
+        # If midpoint matches
+        if list_ref[midpoint] == search_term:
+            print("runs:", runs)
+            return midpoint
         
-        # Non-match, adjust according to above/below
-        if array[mid] < key:
-            left = mid + 1
+        # If search term is greater than midpoint
+        # Set start to element after midpoint
+        # Mirror logic with end point if search term
+        # is lower
+        if list_ref[midpoint] > search_term:
+            end = midpoint - 1
         else:
-            right = mid - 1
+            start = midpoint + 1
 
-    print(runs, "runs") # testing only
-    return -1
+    # If nothing found return -1
+    print("runs:", runs)
+    return - 1
+
+    # For comparison
+    def linear_search(list_ref, search_term):
+        for index, item in enumerate(list_ref):
+            if item == search_term:
+                return index
+        return -1
+
 
 def main():
-    print(binary_search(test_data, "air"))
-    print(binary_search(test_data, "class"))
-    print(binary_search(test_data, "from"))
-    print(binary_search(test_data, "zebra"))
+    # Test runs
+    words = ['air', 'class', 'from', 'zebra']
 
+    for w in words:
+        print(w, "position:", binary_search(test_data, w))
+        
+
+        
 if __name__ == "__main__":
     main()
